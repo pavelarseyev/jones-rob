@@ -1,0 +1,38 @@
+<!-- start -->
+@@if(!context.type) {
+<div class="pagination">
+	<span aria-current="page" class="page-numbers current">1</span>
+	<a class="page-numbers" href="page/2/">2</a>
+	<span class="page-numbers dots">…</span>
+	<a class="page-numbers" href="page/98/">98</a>
+	<a class="page-numbers" href="page/99/">99</a>
+	<a class="next page-numbers" href="page/2/"></a>
+</div>
+}
+
+@@if(context.type === "middle") {
+<div class="pagination">
+	<a class="prev page-numbers" href="page/24/"></a>
+	<a class="page-numbers" href="page/1/">1</a>
+	<a class="page-numbers" href="page/2/">2</a>
+	<span class="page-numbers dots">…</span>
+	<a class="page-numbers" href="page/24/">24</a>
+	<span aria-current="page" class="page-numbers current">25</span>
+	<a class="page-numbers" href="page/26/">26</a>
+	<span class="page-numbers dots">…</span>
+	<a class="page-numbers" href="page/98/">98</a>
+	<a class="page-numbers" href="page/99/">99</a>
+	<a class="next page-numbers" href="page/26/"></a>
+</div>
+}
+
+@@if(context.type === "end") {
+<div class="pagination">
+	<a class="prev page-numbers" href="page/98/"></a>
+	<a class="page-numbers" href="page/1/">1</a>
+	<a class="page-numbers" href="page/2/">2</a>
+	<span class="page-numbers dots">…</span>
+	<a class="page-numbers" href="page/98/">98</a>
+	<span aria-current="page" class="page-numbers current">99</span>
+</div>
+}

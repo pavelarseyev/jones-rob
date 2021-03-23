@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Контакты"})
+<body>
+<div class="wrapper">
+	@@include("header.html", {"modifier": "with-shadow"})
+
+	<main class="main">
+		<section class="contacts">
+			<picture class="contacts-bg">
+				<source srcset="../images/homepage-mobile-bg.png" media="(max-width: 1023px)">
+				<source srcset="../images/news-bg-desktop.png" media="(min-width: 1024px)">
+				<img src="../images/news-bg-desktop.png" alt="background grid" width="1558" height="653">
+			</picture>
+
+			<div class="container">
+				<div class="contacts-holder">
+					<div class="contacts-text">
+						<h2 class="contacts-text-title lineHeading bottom big">
+							Связаться со мной
+						</h2>
+
+						<p class="contacts-text-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet augue nibh est, risus sodales
+							fringilla mauris mauris. Purus volutpat risus, varius senectus sit bibendum elementum semper. Ac sit
+							sit aliquet bibendum a. Aliquet urna, vulputate sagittis, in aliquam volutpat. Tincidunt amet, in arcu
+							est facilisis.
+						</p>
+
+						@@include("contacts-text-info.html")
+
+						@@include("social-links.html", {"modifier": "blue"})
+					</div>
+					<div class="contacts-form-holder">
+						@@include("contacts-page-form.html")
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

@@ -1,0 +1,37 @@
+// colors
+$color-pureWhite: #ffffff;
+$color-pureBlack: #000000;
+$color-black: #373737;
+$color-blue: #1f42a3;
+$color-lightblue: #496dd0;
+$color-lightgrey: #fbfbfb;
+$color-grey: #f2f2f2;
+$color-grey100: #efefef;
+$color-grey200: #b0b0b0;
+$color-grey300: #666666;
+$color-grey400: rgba(214, 214, 214, 0.2);
+$color-orange: #f56e28;
+$color-errorred: #ff0000;
+$color-success: #33bb55;
+//fonts
+$main-ff: "Montserrat", sans-serif;
+$fontW300: 300;
+$fontW400: 400;
+$fontW500: 500;
+$fontW600: 600;
+$fontW700: 700;
+$fontW800: 800;
+$fontW900: 900;
+
+// media settings
+$breakpoints: (
+        mobile-landscape: 568px,
+        tablet: 768px,
+        tablet-landscape: 1024px,
+        desktop: 1200px,
+        medium-desktop: 1440px,
+        large-desktop: 1800px,
+        ultra-desktop: 2400px
+);
+
+$images-path: '../images/';

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<!--TODO: удалить комментарий-->
+	<!--Экстражирное начертание для цифр-->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&text=0123456789&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+<!--	<link rel="stylesheet" href="../css/style.css"/>-->
+	<link rel="stylesheet" href="../css/style.min.css"/>
+
+	<title>Single page</title>
+</head>
+<body>
+<div class="wrapper">
+	<!--
+	TODO: удалить комментарий
+	ОБРАТИ ВНИМАНИЕ, У ХЭДЕРА ЕСТЬ КЛАСС-МОДИФИКАТОР with-shadow
+	ОН НАВЕШИВАЕТСЯ НА ВСЕХ СТРАНИЦАХ, КРОМЕ ХОМЫ
+	-->
+	<header class="header with-shadow js-header">
+		<div class="container">
+			<div class="header-holder">
+				<strong class="site-logo header-logo">
+					<a href="index.html">
+						<img width="91" height="47" src="../images/logo.svg" alt="Jones Rob logo">
+					</a>
+				</strong>
+
+				<div class="header-navigation-wrapper">
+					<nav class="site-navigation header-navigation">
+						<ul>
+							<li class="current-menu-item">
+								<a href="index.html">Главная</a>
+							</li>
+							<li>
+								<a href="news.html">Посты</a>
+							</li>
+							<li>
+								<a href="contacts.html">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="header-controls">
+						<div class="header-language js-header-language">
+							<span>Рус</span>
+							<div class="language-dropdown js-language-dropdown" style="display: none;">
+								<span>Рус</span>
+								<a href="#">UA</a>
+							</div>
+						</div>
+
+						<a href="contacts.html" class="button with-icon left-icon">
+							<svg class="button-icon" fill="none" viewBox="0 0 15 16" width="15" height="16">
+								<g clip-path="url(#clip0)">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+										  d="M9.40615 3.625C10.0166 3.7441 10.5776 4.04266 11.0174 4.48246C11.4572 4.92226 11.7558 5.48329 11.8749 6.09375M9.40615 1.125C10.6744 1.2659 11.8571 1.83386 12.76 2.73563C13.663 3.6374 14.2324 4.81938 14.3749 6.0875M13.7499 11.075V12.95C13.7506 13.1241 13.7149 13.2964 13.6452 13.4558C13.5755 13.6153 13.4732 13.7585 13.3449 13.8762C13.2167 13.9938 13.0653 14.0834 12.9004 14.1392C12.7355 14.195 12.5608 14.2157 12.3874 14.2C10.4642 13.991 8.61677 13.3338 6.99365 12.2812C5.48354 11.3217 4.20323 10.0414 3.24365 8.53125C2.18738 6.90075 1.53005 5.04437 1.3249 3.1125C1.30928 2.93967 1.32982 2.76548 1.38521 2.60102C1.4406 2.43656 1.52963 2.28543 1.64663 2.15726C1.76362 2.0291 1.90603 1.92669 2.06477 1.85658C2.22351 1.78646 2.39511 1.75016 2.56865 1.75H4.44365C4.74696 1.74701 5.04102 1.85442 5.271 2.05221C5.50098 2.24999 5.6512 2.52465 5.69365 2.825C5.77279 3.42504 5.91955 4.0142 6.13115 4.58125C6.21524 4.80495 6.23344 5.04807 6.18359 5.2818C6.13374 5.51553 6.01794 5.73007 5.8499 5.9L5.05615 6.69375C5.94587 8.25847 7.24143 9.55403 8.80615 10.4438L9.5999 9.65C9.76983 9.48196 9.98437 9.36616 10.2181 9.31631C10.4518 9.26646 10.6949 9.28466 10.9186 9.36875C11.4857 9.58034 12.0749 9.72711 12.6749 9.80625C12.9785 9.84908 13.2558 10.002 13.454 10.2359C13.6522 10.4699 13.7575 10.7685 13.7499 11.075Z"/>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<path d="M0 0H15V15H0z" transform="translate(0 .5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							Позвонить мне
+						</a>
+					</div>
+				</div>
+
+
+				<button class="menu-button js-menu-button" aria-label="Показать/скрыть меню">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="single-page">
+			<div class="container small">
+				<article class="single-page-article">
+					<div class="single-page-heading">
+						<h1 class="single-page-title">
+							Транзакции в SQLAlchemy
+						</h1>
+
+						<div class="single-page-meta">
+							<div class="single-page-date">
+								<svg class="single-page-metaIcon" fill="none" viewBox="0 0 15 16" width="15" height="15">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										  d="M11.875 3H3.125C2.43464 3 1.875 3.55964 1.875 4.25V13C1.875 13.6904 2.43464 14.25 3.125 14.25H11.875C12.5654 14.25 13.125 13.6904 13.125 13V4.25C13.125 3.55964 12.5654 3 11.875 3zM10 1.75V4.25M5 1.75V4.25M1.875 6.75H13.125"/>
+								</svg>
+								17 Декабря 2020
+							</div>
+							<div class="single-page-readTime">
+								<svg class="single-page-metaIcon" fill="none" stroke-linecap="round" stroke-linejoin="round"
+									 viewBox="0 0 15 16" width="15" height="15">
+									<path d="M7.5 14.25C10.9518 14.25 13.75 11.4518 13.75 8C13.75 4.54822 10.9518 1.75 7.5 1.75C4.04822 1.75 1.25 4.54822 1.25 8C1.25 11.4518 4.04822 14.25 7.5 14.25Z"/>
+									<path d="M7.5 4.25V8L10 9.25"/>
+								</svg>
+								Читается за 5 мин
+							</div>
+						</div>
+					</div>
+
+					<div class="content">
+						<p>
+							<strong>Транзакция</strong> — последовательность действий, связанных с базой данных. Их основная
+							польза заключается в
+							том, что при возникновении какой-то ошибки или достижении других нужных условий всю транзакцию можно
+							отменить, и все изменения, примененные к базе данных, будут отменены. Сегодня мы напишем небольшой
+							скрипт, который при помощи транзакций SQLAlchemy пишет информацию о подписчиках сообщества в базу
+							данных MySQL, а при возникновении ошибки отменяет текущую транзакцию.
+						</p>
+
+						<h5>
+							Сбор информации об участниках через VK API
+						</h5>
+
+						<p>
+							Для начала напишем пару маленьких функций — первая будет возвращать число подписчиков сообщества, а
+							вторая — отправлять запрос и формировать датафрейм с информацией о подписчиках сообщества.
+						</p>
+
+						<pre>from sqlalchemy import create_engine
+import pandas as pd
+import requests
+import time
+token = '42hj2ehd3djdournf48fjurhf9r9o2eurnf48fjurhf9r9734'
+group_id = 'leftjoin'</pre>
+
+						<p>
+							Чтобы узнать число подписчиков достаточно отправить метод groups.getMembers с любыми параметрами — в
+							ответе всегда возвращается количество в поле count.
+						</p>
+						<pre>def get_subs_count(group_id):
+    count = requests.get('https://api.vk.com/method/groups.getMembers', params={
+        'access_token':token,
+        'v':5.103,
+        'group_id':group_id
+    }).json()['response']['count']
+    return count</pre>
+
+						<p>
+							Для примера будем брать имена, id, фамилии подписчиков, некоторую расширенную информацию и получать
+							только по 10 подписчиков за раз, чтобы рассмотреть работу транзакций детально — каждые 10 подписчиков
+							будут вставляться одной транзакцией. Введём дополнительное поле offset, чтобы знать, в какой итерации
+							добавлены строки.
+						</p>
+
+						<pre>def get_subs_count(group_id):
+    count = requests.get('https://api.vk.com/method/groups.getMembers', params={
+        'access_token':token,
+        'v':5.103,
+        'group_id':group_id
+    }).json()['response']['count']
+    return count</pre>
+
+						<ol>
+							<li>
+								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
+								duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+							</li>
+							<li>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac
+								cursus rhoncus pretium.
+							</li>
+							<li>
+								Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer
+								lacinia faucibus.
+							</li>
+						</ol>
+
+						<img src="../images/content-image.png" alt="content image" width="700" height="370">
+
+						<h5>
+							Транзакции
+						</h5>
+
+						<p>
+							Наконец, можем подсоединиться к базе данных при помощи SQLAlchemy:
+						</p>
+
+						<h1>
+							Пример H1 заголовка
+						</h1>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid est impedit molestias tempora. Deserunt natus neque nisi quam similique.</p>
+
+						<h2>
+							Пример H2 заголовка
+						</h2>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsum necessitatibus nihil. Fugiat, voluptatum.</p>
+
+						<h3>
+							Пример H3 заголовка
+						</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur eligendi laboriosam molestiae quis.</p>
+
+						<h4>
+							Пример H4 заголовка
+						</h4>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis debitis nulla officiis porro tenetur?</p>
+
+						<h5>
+							Пример H5 заголовка
+						</h5>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at consequatur ipsum modi saepe?</p>
+
+						<h6>
+							Пример H6 заголовка и цитата ниже
+						</h6>
+
+						<blockquote>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cumque, delectus ex expedita illum
+							libero, maiores minima nihil non nulla officiis reiciendis repellat? At excepturi nemo non, quas quo
+							sunt.
+						</blockquote>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti eius eum fuga laboriosam
+							officiis, sapiente totam! Accusamus deleniti laborum nam, natus necessitatibus, numquam quas qui quis
+							sit voluptatem, voluptatum.
+						</p>
+
+						<pre>engine = create_engine('mysql+mysqlconnector://' +
+                           'root' + ':' + '' + '@' +
+                           'localhost' + '/' +
+                           'transaction', echo=False)</pre>
+
+						<p>
+							У транзакций всегда должно быть начало — begin, и конец — commit. В случае, если произошла какая-то
+							ошибка, можно сделать откат — rollback. Сперва получаем число подписчиков сообщество, и в каждой
+							итерации цикла при помощи контекстного менеджера with ... as создаём новое подключение. Сразу после
+							объявляем начало транзакции по этому подключению и с обработчиком исключений пробуем получить
+							информацию о десяти подписчиках через функцию get_subs_info. Вставляем полученный датафрейм в таблицу
+							методом to_sql и завершаем транзакцию при помощи метода commit(). В случае, если возникла какая-то
+							ошибка — печатаем её на экран и отменяем транзакцию.
+						</p>
+
+						<pre>offset = 0
+subs_count = get_subs_count(group_id)
+while offset < subs_count:
+    with engine.connect() as conn:
+        transaction = conn.begin()
+        try:
+            df = get_subs_info(group_id, offset)
+            df.to_sql('subscribers', con=conn, if_exists='append', index=False)
+            transaction.commit()
+        except Exception as E:
+            print(E)
+            transaction.rollback()
+    time.sleep(1)
+    offset += 10</pre>
+
+						<p>
+							Чтобы протестировать работу транзакций слегка обновим последний блок кода — добавим вызов ошибки
+							ValueError после вставки данных в базу, если текущий offset равен 10.
+						</p>
+
+						<pre>offset = 0
+subs_count = get_subs_count(group_id)
+while offset < subs_count:
+    with engine.connect() as conn:
+        transaction = conn.begin()
+        try:
+            df = get_subs_info(group_id, offset)
+            df.to_sql('subscribers', con=conn, if_exists='append', index=False)
+            transaction.commit()
+        except Exception as E:
+            print(E)
+            transaction.rollback()
+    time.sleep(1)
+    offset += 10</pre>
+
+						<p>
+							Как и планировалось, данные за итерацию с offset = 10 не занесены в таблицу. Несмотря на то, что
+							ошибка возникла уже после добавления новых данных, транзакция была прервана методом rollback() и
+							завершение транзакции было отменено.
+						</p>
+
+						<ul>
+							<li>
+								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+							</li>
+							<li>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac cursus rhoncus pretium.
+							</li>
+							<li>
+								Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer lacinia faucibus.
+							</li>
+						</ul>
+					</div>
+
+					<div class="article-author">
+						<div class="article-author-info">
+							<div class="article-author-avatar">
+								<img class="article-author-img" src="../images/author-avatar.png" alt="Ralph Edwards photo" width="75" height="75">
+							</div>
+							<h6 class="article-author-name">
+								Ralph Edwards
+							</h6>
+							<p class="article-author-position">
+								Автор статьи
+							</p>
+						</div>
+
+						<div class="article-author-text">
+							<blockquote>
+								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit
+								mollit.
+							</blockquote>
+						</div>
+					</div>
+				</article>
+
+				<div class="single-page-navigation">
+					<a href="#" class="single-page-prevLink arrow-link left">
+						<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15"
+							 height="15">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+								  d="M14.0049 7.5H1.24508M5.625 3.125L1.25 7.5 5.625 11.875"/>
+						</svg>
+						<span>
+							Предыдущая
+							<span class="mobile-hidden-text">статья</span>
+						</span>
+					</a>
+					<a href="#" class="single-page-nextLink arrow-link right">
+						<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+								  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+						</svg>
+						<span>
+							Следующая
+							<span class="mobile-hidden-text">статья</span>
+						</span>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<section class="contacts-section">
+		<picture class="contacts-section-bg">
+			<source srcset="../images/homepage-mobile-bg.png" media="(max-width: 1023px)">
+			<source srcset="../images/contacts-section-desktop-bg.png" media="(min-width: 1024px)">
+			<img loading="lazy" src="../images/contacts-section-desktop-bg.png" alt="background grid" width="1243" height="520">
+		</picture>
+
+		<div class="container">
+			<div class="contacts-section-holder">
+				<div class="contacts-section-text">
+					<h5 class="contacts-section-textTitle lineHeading left">
+						Давайте запустим <br> проект вместе
+					</h5>
+
+					<p class="contacts-section-description">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet augue nibh est, risus sodales fringilla
+						mauris mauris. Purus volutpat risus, varius senectus sit bibendum elementum semper. Ac sit sit aliquet
+						bibendum a. Aliquet urna, vulputate sagittis, in aliquam volutpat. Tincidunt amet, in arcu est facilisis.
+					</p>
+
+					<div class="contacts-section-linksHolder">
+						<a href="contacts.html" class="button with-icon left-icon">
+							<svg class="button-icon" fill="none" viewBox="0 0 15 16" width="15" height="16">
+								<g clip-path="url(#clip0)">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+										  d="M9.40615 3.625C10.0166 3.7441 10.5776 4.04266 11.0174 4.48246C11.4572 4.92226 11.7558 5.48329 11.8749 6.09375M9.40615 1.125C10.6744 1.2659 11.8571 1.83386 12.76 2.73563C13.663 3.6374 14.2324 4.81938 14.3749 6.0875M13.7499 11.075V12.95C13.7506 13.1241 13.7149 13.2964 13.6452 13.4558C13.5755 13.6153 13.4732 13.7585 13.3449 13.8762C13.2167 13.9938 13.0653 14.0834 12.9004 14.1392C12.7355 14.195 12.5608 14.2157 12.3874 14.2C10.4642 13.991 8.61677 13.3338 6.99365 12.2812C5.48354 11.3217 4.20323 10.0414 3.24365 8.53125C2.18738 6.90075 1.53005 5.04437 1.3249 3.1125C1.30928 2.93967 1.32982 2.76548 1.38521 2.60102C1.4406 2.43656 1.52963 2.28543 1.64663 2.15726C1.76362 2.0291 1.90603 1.92669 2.06477 1.85658C2.22351 1.78646 2.39511 1.75016 2.56865 1.75H4.44365C4.74696 1.74701 5.04102 1.85442 5.271 2.05221C5.50098 2.24999 5.6512 2.52465 5.69365 2.825C5.77279 3.42504 5.91955 4.0142 6.13115 4.58125C6.21524 4.80495 6.23344 5.04807 6.18359 5.2818C6.13374 5.51553 6.01794 5.73007 5.8499 5.9L5.05615 6.69375C5.94587 8.25847 7.24143 9.55403 8.80615 10.4438L9.5999 9.65C9.76983 9.48196 9.98437 9.36616 10.2181 9.31631C10.4518 9.26646 10.6949 9.28466 10.9186 9.36875C11.4857 9.58034 12.0749 9.72711 12.6749 9.80625C12.9785 9.84908 13.2558 10.002 13.454 10.2359C13.6522 10.4699 13.7575 10.7685 13.7499 11.075Z"/>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<path d="M0 0H15V15H0z" transform="translate(0 .5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							Позвонить мне
+						</a>
+
+						<div class="messengers">
+							<ul class="messenger-listing">
+								<li class="messenger-item">
+									<a class="messenger-link"
+									   href="#"
+									   title="Написать нам в Viber"
+									   aria-label="Написать нам в Viber">
+										<svg class="messenger-icon" viewBox="0 0 35 35" width="35" height="35">
+											<rect width="35" height="35" rx="17.5"/>
+											<path d="M26.0703 8.88458C25.4914 8.35239 23.1479 6.64843 17.924 6.62509C17.924 6.62509 11.7664 6.25162 8.76463 9.00596C7.09335 10.6772 6.50514 13.1188 6.44445 16.1532C6.38376 19.183 6.3044 24.8644 11.7804 26.405H11.7851L11.7804 28.7532C11.7804 28.7532 11.7477 29.7055 12.3733 29.8969C13.1296 30.1304 13.5777 29.4068 14.3013 28.6271C14.6981 28.1976 15.2443 27.5721 15.6598 27.0912C19.4039 27.404 22.2842 26.6851 22.611 26.5777C23.3673 26.3303 27.6482 25.7841 28.3438 20.1027C29.0627 14.2579 27.9937 10.5559 26.0703 8.88458ZM26.7052 19.6919C26.117 24.4349 22.6484 24.7337 22.0088 24.9391C21.738 25.0278 19.2078 25.6581 16.0239 25.448C16.0239 25.448 13.6524 28.3097 12.9148 29.052C12.7981 29.1687 12.6627 29.2154 12.574 29.192C12.448 29.1593 12.4106 29.0099 12.4153 28.7905C12.4153 28.4731 12.434 24.8831 12.434 24.8831C12.4293 24.8831 12.4293 24.8831 12.434 24.8831C7.79827 23.5993 8.06904 18.7629 8.12039 16.2326C8.17175 13.7023 8.64792 11.6249 10.0624 10.2291C12.5974 7.93223 17.8306 8.27303 17.8306 8.27303C22.2469 8.2917 24.3617 9.62219 24.8518 10.0657C26.4811 11.4662 27.3121 14.8041 26.7052 19.6919Z"/>
+											<path d="M20.0758 16.3213C19.9218 16.3213 19.7911 16.1999 19.7817 16.0412C19.7304 15.0375 19.2589 14.5473 18.2972 14.496C18.1338 14.4866 18.0078 14.3466 18.0171 14.1832C18.0264 14.0198 18.1665 13.8937 18.3299 13.9031C19.5997 13.9731 20.3093 14.7014 20.3746 16.0085C20.384 16.1719 20.2579 16.312 20.0945 16.3166C20.0852 16.3213 20.0805 16.3213 20.0758 16.3213Z"/>
+											<path d="M21.5884 16.8256H21.5838C21.4204 16.8209 21.2897 16.6856 21.2943 16.5222C21.3177 15.5138 21.0282 14.6968 20.412 14.0246C19.8005 13.3523 18.9555 12.9882 17.8397 12.9088C17.6763 12.8948 17.555 12.7548 17.569 12.5914C17.583 12.428 17.723 12.3066 17.8864 12.3206C19.1469 12.414 20.1412 12.8528 20.8508 13.6278C21.5651 14.4074 21.9106 15.3831 21.8872 16.5362C21.8826 16.6996 21.7472 16.8256 21.5884 16.8256Z"/>
+											<path d="M23.1386 17.4323C22.9752 17.4323 22.8445 17.3016 22.8445 17.1382 22.8305 15.3316 22.3123 13.9544 21.2573 12.9227 20.2162 11.905 18.8951 11.3868 17.3405 11.3728 17.1771 11.3728 17.0464 11.2374 17.0464 11.074 17.0464 10.9106 17.1818 10.7799 17.3405 10.7799 19.0538 10.7939 20.5103 11.3681 21.6634 12.4979 22.8212 13.6276 23.414 15.1869 23.4327 17.1289 23.4374 17.297 23.3067 17.4323 23.1386 17.4323 23.1433 17.4323 23.1433 17.4323 23.1386 17.4323zM18.3675 19.9766C18.3675 19.9766 18.7829 20.0139 19.007 19.7385L19.4412 19.1923C19.6513 18.9215 20.1601 18.7488 20.655 19.0242 20.9304 19.1783 21.4299 19.4864 21.738 19.7152 22.0695 19.9579 22.7417 20.5181 22.7464 20.5228 23.0685 20.7936 23.1432 21.1904 22.9238 21.6152 22.9238 21.6152 22.9238 21.6199 22.9238 21.6245 22.6997 22.0213 22.3963 22.3948 22.0181 22.7403 22.0135 22.7403 22.0135 22.7449 22.0088 22.7449 21.696 23.0064 21.3879 23.1558 21.0891 23.1884 21.0518 23.1978 21.0098 23.1978 20.9537 23.1978 20.823 23.1978 20.6923 23.1791 20.5616 23.1371L20.5523 23.1231C20.0854 22.9924 19.3105 22.6656 18.022 21.9513 17.1817 21.4891 16.4861 21.0176 15.8932 20.5461 15.5804 20.2987 15.263 20.0233 14.9362 19.6965 14.9269 19.6871 14.9129 19.6731 14.9035 19.6638 14.8942 19.6545 14.8802 19.6405 14.8708 19.6311 14.8615 19.6218 14.8475 19.6078 14.8382 19.5984 14.8288 19.5891 14.8148 19.5751 14.8055 19.5658 14.4834 19.239 14.2033 18.9215 13.9558 18.6088 13.4843 18.0205 13.0128 17.3203 12.5507 16.48 11.8364 15.1868 11.5096 14.4119 11.3789 13.9497L11.3649 13.9404C11.3229 13.8097 11.3042 13.679 11.3042 13.5482 11.3042 13.4922 11.3042 13.4502 11.3135 13.4129 11.3509 13.1094 11.5003 12.806 11.757 12.4932 11.757 12.4885 11.7617 12.4885 11.7617 12.4838 12.1072 12.101 12.4806 11.8023 12.8774 11.5782 12.8774 11.5782 12.8821 11.5782 12.8868 11.5782 13.3069 11.3588 13.7037 11.4335 13.9792 11.7556 13.9792 11.7556 14.5441 12.4325 14.7868 12.764 15.0156 13.0767 15.3237 13.5716 15.4777 13.847 15.7532 14.3419 15.5804 14.8507 15.3097 15.0608L14.7635 15.495C14.488 15.719 14.5254 16.1345 14.5254 16.1345 14.5254 16.1345 15.333 19.2063 18.3675 19.9766z"/>
+										</svg>
+									</a>
+								</li>
+								<li class="messenger-item">
+									<a class="messenger-link"
+									   href="#"
+									   title="Написать нам в Whatsapp"
+									   aria-label="Написать нам в Whatsapp">
+										<svg class="messenger-icon" viewBox="0 0 35 35" width="35" height="35">
+											<rect width="35" height="35" rx="17.5"/>
+											<path d="M25.3393 9.63336C23.4631 7.70205 20.8697 6.65363 18.221 6.65363C12.5926 6.65363 8.06788 11.2336 8.12306 16.8068C8.12306 18.5725 8.61968 20.2831 9.44738 21.8282L8.0127 27.0703L13.3652 25.6908C14.855 26.5185 16.5104 26.9048 18.1658 26.9048C23.739 26.9048 28.2638 22.3248 28.2638 16.7516C28.2638 14.0478 27.2154 11.5095 25.3393 9.63336ZM18.221 25.1942C16.7312 25.1942 15.2413 24.8079 13.9722 24.0354L13.6411 23.8698L10.4406 24.6975L11.2683 21.5523L11.0476 21.2212C8.61968 17.3034 9.77846 12.1165 13.7514 9.68854C17.7244 7.26061 22.8562 8.41939 25.2841 12.3924C27.712 16.3653 26.5532 21.4971 22.5803 23.925C21.3111 24.7527 19.7661 25.1942 18.221 25.1942ZM23.0769 19.0692L22.4699 18.7933C22.4699 18.7933 21.587 18.407 21.0352 18.1311C20.98 18.1311 20.9249 18.0759 20.8697 18.0759C20.7041 18.0759 20.5938 18.1311 20.4834 18.1863C20.4834 18.1863 20.4282 18.2415 19.6557 19.1243C19.6005 19.2347 19.4902 19.2899 19.3798 19.2899H19.3246C19.2695 19.2899 19.1591 19.2347 19.1039 19.1795L18.828 19.0692C18.221 18.7933 17.6692 18.4622 17.2278 18.0207C17.1174 17.9104 16.9519 17.8 16.8415 17.6897C16.4553 17.3034 16.069 16.862 15.7931 16.3653L15.7379 16.255C15.6827 16.1998 15.6827 16.1446 15.6276 16.0343C15.6276 15.9239 15.6276 15.8135 15.6827 15.7584C15.6827 15.7584 15.9035 15.4825 16.069 15.3169C16.1794 15.2066 16.2345 15.041 16.3449 14.9307C16.4553 14.7651 16.5104 14.5444 16.4553 14.3789C16.4001 14.1029 15.7379 12.6131 15.5724 12.282C15.462 12.1165 15.3517 12.0613 15.1861 12.0061H15.0206C14.9102 12.0061 14.7447 12.0061 14.5791 12.0061C14.4688 12.0061 14.3584 12.0613 14.2481 12.0613L14.1929 12.1165C14.0825 12.1716 13.9722 12.282 13.8618 12.3372C13.7514 12.4475 13.6963 12.5579 13.5859 12.6683C13.1996 13.1649 12.9789 13.7719 12.9789 14.3789C12.9789 14.8203 13.0893 15.2617 13.2548 15.648L13.31 15.8135C13.8066 16.862 14.4688 17.8 15.3517 18.6277L15.5724 18.8484C15.7379 19.014 15.9035 19.1243 16.0138 19.2899C17.1726 20.2831 18.4969 21.0005 19.9868 21.3867C20.1523 21.4419 20.3731 21.4419 20.5386 21.4971C20.7041 21.4971 20.9249 21.4971 21.0904 21.4971C21.3663 21.4971 21.6974 21.3867 21.9181 21.2764C22.0836 21.166 22.194 21.166 22.3044 21.0557L22.4147 20.9453C22.5251 20.8349 22.6354 20.7798 22.7458 20.6694C22.8562 20.559 22.9665 20.4487 23.0217 20.3383C23.1321 20.1176 23.1872 19.8417 23.2424 19.5658C23.2424 19.4554 23.2424 19.2899 23.2424 19.1795C23.2424 19.1795 23.1872 19.1243 23.0769 19.0692Z"/>
+										</svg>
+									</a>
+								</li>
+								<li class="messenger-item">
+									<a class="messenger-link"
+									   href="#"
+									   title="Написать нам в Telegram"
+									   aria-label="Написать нам в Telegram">
+										<svg class="messenger-icon" viewBox="0 0 35 35" width="35" height="35">
+											<rect width="35" height="35" rx="17.5"/>
+											<path d="M7.86579 17.1142C12.9549 14.8504 16.3484 13.3579 18.0463 12.6368C22.8943 10.578 23.9017 10.2204 24.5583 10.2084C24.7027 10.206 25.0256 10.2425 25.2348 10.4158C25.4114 10.5621 25.46 10.7598 25.4832 10.8985C25.5065 11.0372 25.5354 11.3532 25.5124 11.6001C25.2497 14.4185 24.1129 21.258 23.5346 24.4147C23.2899 25.7504 22.8081 26.1982 22.3416 26.242C21.3278 26.3373 20.558 25.558 19.5761 24.9008C18.0397 23.8725 17.1717 23.2324 15.6803 22.2289C13.9568 21.0692 15.0741 20.4319 16.0563 19.3902C16.3134 19.1176 20.78 14.9694 20.8665 14.5931C20.8773 14.5461 20.8873 14.3706 20.7853 14.278C20.6832 14.1854 20.5325 14.2171 20.4238 14.2422C20.2697 14.278 17.8152 15.9344 13.0603 19.2115C12.3636 19.7 11.7326 19.938 11.1672 19.9255C10.5439 19.9118 9.3449 19.5657 8.45357 19.2699C7.36032 18.907 6.49143 18.7152 6.56709 18.099C6.6065 17.778 7.0394 17.4497 7.86579 17.1142Z"/>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="contacts-section-right">
+					<div class="contacts-section-formHolder">
+						<h5 class="contacts-section-formTitle">
+							Оставьте свои контакты <br> и я свяжусь с вами
+						</h5>
+
+						<form>
+							<div class="form-group">
+								<input type="text" placeholder="First Name">
+							</div>
+							<div class="form-group">
+								<input type="email" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<input type="tel" placeholder="Phone Number">
+							</div>
+
+							<button type="submit" class="button with-icon left-icon">
+								<svg class="button-icon" fill="none" viewBox="0 0 15 16" width="15" height="16">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+										  d="M13.75 1.75L6.875 8.625M13.75 1.75L9.375 14.25 6.875 8.625 1.25 6.125 13.75 1.75z"/>
+								</svg>
+								Отправить
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--contacts-section end-->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-holder">
+				<strong class="site-logo footer-logo">
+					<a href="index.html">
+						<img width="91" height="47" src="../images/logo.svg" alt="Jones Rob logo">
+					</a>
+				</strong>
+
+				<nav class="site-navigation footer-navigation">
+					<ul>
+						<li class="">
+							<a href="index.html">Главная</a>
+						</li>
+						<li>
+							<a href="news.html">Посты</a>
+						</li>
+						<li>
+							<a href="contacts.html">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="footer-right">
+					<p class="footer-copyright">&copy; Copyright 2021</p>
+
+					<div class="socials grey small">
+						<ul class="social-listing">
+							<li class="social-item">
+								<a class="social-item-link" href="#" title="Напишите нам в Facebook" aria-label="Написать нам в Facebook">
+									<svg class="social-item-icon" viewBox="0 0 25 25" width="25" height="25">
+										<path d="M13.8889 9.0278V6.25003C13.8889 5.48336 14.5111 4.86114 15.2778 4.86114H16.6667V1.38892H13.8889C11.5875 1.38892 9.72224 3.25419 9.72224 5.55558V9.0278H6.94446V12.5H9.72224V23.6111H13.8889V12.5H16.6667L18.0556 9.0278H13.8889Z"/>
+									</svg>
+								</a>
+							</li>
+
+							<li class="social-item">
+								<a class="social-item-link" href="#" title="Напишите нам в Instagram" aria-label="Написать нам в Instagram">
+									<svg class="social-item-icon" viewBox="0 0 25 25" width="25" height="25">
+										<path d="M16.6666 1.28475H8.3333C4.44105 1.28475 1.28469 4.44111 1.28469 8.33336V16.6667C1.28469 20.5589 4.44105 23.7153 8.3333 23.7153H16.6666C20.5589 23.7153 23.7152 20.5589 23.7152 16.6667V8.33336C23.7152 4.44111 20.5589 1.28475 16.6666 1.28475ZM21.4236 16.6667C21.4236 19.2897 19.2897 21.4236 16.6666 21.4236H8.3333C5.71027 21.4236 3.57635 19.2897 3.57635 16.6667V8.33336C3.57635 5.71033 5.71027 3.57642 8.3333 3.57642H16.6666C19.2897 3.57642 21.4236 5.71033 21.4236 8.33336V16.6667Z"/>
+										<path d="M12.5 6.84029C9.37443 6.84029 6.84029 9.37443 6.84029 12.5 6.84029 15.6256 9.37443 18.1597 12.5 18.1597 15.6256 18.1597 18.1597 15.6256 18.1597 12.5 18.1597 9.37443 15.6256 6.84029 12.5 6.84029zM12.5 15.8681C10.6437 15.8681 9.13196 14.3564 9.13196 12.5 9.13196 10.6423 10.6436 9.13196 12.5 9.13196 14.3564 9.13196 15.8681 10.6423 15.8681 12.5 15.8681 14.3564 14.3564 15.8681 12.5 15.8681zM18.0556 8.33332C18.8226 8.33332 19.4445 7.71149 19.4445 6.94443 19.4445 6.17737 18.8226 5.55554 18.0556 5.55554 17.2885 5.55554 16.6667 6.17737 16.6667 6.94443 16.6667 7.71149 17.2885 8.33332 18.0556 8.33332z"/>
+									</svg>
+								</a>
+							</li>
+
+							<li class="social-item">
+								<a class="social-item-link" href="#" title="Напишите нам в LinkedIn" aria-label="Написать нам в LinkedIn">
+									<svg class="social-item-icon" viewBox="0 0 25 25" width="25" height="25">
+										<path d="M6.3583 8.33337H1.38885V23.6112H6.3583V8.33337zM19.8944 8.51254C19.8416 8.49587 19.7916 8.47782 19.7361 8.46254 19.6694 8.44726 19.6028 8.43476 19.5347 8.42365 19.2708 8.37087 18.9819 8.33337 18.643 8.33337 15.7458 8.33337 13.9083 10.4403 13.3028 11.2542V8.33337H8.33331V23.6112H13.3028V15.2778C13.3028 15.2778 17.0583 10.0473 18.643 13.8889 18.643 17.3181 18.643 23.6112 18.643 23.6112H23.6111V13.3014C23.6111 10.9931 22.0291 9.06949 19.8944 8.51254zM3.81941 6.25003C5.16177 6.25003 6.24997 5.16183 6.24997 3.81947 6.24997 2.47711 5.16177 1.38892 3.81941 1.38892 2.47705 1.38892 1.38885 2.47711 1.38885 3.81947 1.38885 5.16183 2.47705 6.25003 3.81941 6.25003z"/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+<script src="../js/global.min.js"></script>
+<!--<script src="../js/global.js"></script>-->
+</body>
+</html>

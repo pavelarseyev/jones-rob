@@ -1,0 +1,189 @@
+.contacts {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include media(">=tablet") {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include media(">=tablet-landscape") {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @include media(">=desktop") {
+        padding-top: 87px;
+        padding-bottom: 108px;
+    }
+}
+
+.contacts-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+
+    @include media(">=tablet-landscape") {
+        width: 81.14%;
+    }
+}
+
+.contacts-holder {
+    width: 100%;
+    max-width: 580px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media(">=tablet-landscape") {
+        display: flex;
+        align-items: center;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.contacts-text {
+    margin-bottom: 40px;
+
+    @include media(">=tablet-landscape") {
+        width: 40.91%;
+        max-width: 491px;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+    @include media(">=desktop") {
+        margin-right: 80px;
+    }
+
+    @include media(">=medium-desktop") {
+        margin-right: 209px;
+    }
+}
+
+.contacts-text-title {
+    margin-bottom: 15px;
+    font-size: 32px;
+    line-height: 39px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 25px;
+        font-size: 38px;
+        line-height: 46px;
+    }
+
+    @include media(">=desktop") {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+.contacts-text-description {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.contacts-text-info {
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 24px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    li {
+
+        & + li {
+            margin-top: 25px;
+        }
+    }
+
+    address,
+    a {
+        display: inline-grid;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-column-gap: 15px;
+        color: inherit;
+    }
+
+    a {
+        .no-touch & {
+            &:hover {
+                color: $color-blue;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        stroke: $color-blue;
+    }
+}
+
+.contacts-form-holder {
+    margin-left: auto;
+
+    @include media(">=tablet-landscape") {
+        width: 50%;
+        max-width: 580px;
+    }
+
+    @include media(">=medium-desktop") {
+        margin-right: -80px;
+    }
+}
+
+.contacts-form {
+    padding: 30px 20px;
+    background-color: $color-pureWhite;
+    border: 1px solid $color-grey400;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px $color-grey400;
+
+    @include media(">=tablet-landscape") {
+        padding: 40px;
+    }
+
+    @include media(">=desktop") {
+        padding: 60px;
+    }
+
+    @include media(">=medium-desktop") {
+        padding: 80px;
+    }
+}
+
+.contacts-form-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 26px;
+
+    @include media(">=tablet-landscape") {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    @include media(">=desktop") {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}

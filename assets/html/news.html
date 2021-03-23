@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Новости"})
+<body>
+<div class="wrapper">
+	@@include("header.html", {"modifier": "with-shadow"})
+
+	<main class="main">
+		<section class="news-page">
+			<picture class="news-page-bg">
+				<source srcset="../images/news-bg-mobile.png" media="(max-width: 1023px)">
+				<source srcset="../images/news-bg-desktop.png" media="(min-width: 1024px)">
+				<img loading="lazy" src="../images/news-bg-desktop.png" alt="background grid" width="1558" height="653">
+			</picture>
+
+			<div class="container">
+				@@include("news-listing.html", {
+				"page": "news",
+				"headingModifier": "top",
+				"count": 12
+				})
+
+				<div class="news-page-paginationHolder">
+					@@include("pagination.html", {"type": "middle"})
+				</div>
+			</div>
+		</section>
+	</main>
+
+	@@include("contacts-section.html")
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

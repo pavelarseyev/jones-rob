@@ -1,0 +1,292 @@
+//HERO SECTION START
+.hero-section {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @include media(">=tablet") {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    @include media(">=desktop") {
+        padding-top: 55px;
+        padding-bottom: 80px;
+    }
+}
+
+.hero-section-bg {
+    position: absolute;
+    z-index: -1;
+    top: 37px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+
+    @include media(">=tablet-landscape") {
+        top: auto;
+        bottom: -10px;
+        left: 0;
+        width: 81.14%;
+    }
+}
+
+.hero-section-holder {
+    width: 100%;
+    max-width: 585px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media(">=tablet-landscape") {
+        display: flex;
+        align-items: center;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.hero-section-text {
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include media(">=tablet-landscape") {
+        flex-shrink: 0;
+        width: 43%;
+        margin-right: 8.25%;
+        margin-bottom: 0;
+    }
+}
+
+.hero-section-heading {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 44px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 25px;
+        font-size: 42px;
+        line-height: 50px;
+    }
+
+    @include media(">=desktop") {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+.hero-section-description {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include media(">=tablet") {
+        margin-bottom: 30px;
+    }
+
+    @include media(">=desktop") {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+//HERO SECTION END
+
+
+
+//ACHIEVEMENT SECTION START
+.achievements {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $color-lightgrey;
+
+    @include media(">=tablet") {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    @include media(">=desktop") {
+        padding-top: 78px;
+        padding-bottom: 120px;
+    }
+}
+
+.achievements-holder {
+    max-width: 450px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media(">=tablet-landscape") {
+        display: flex;
+        align-items: center;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.achievements-text {
+    margin-bottom: 50px;
+
+    @include media(">=tablet-landscape") {
+        flex-shrink: 0;
+        width: 42%;
+        margin-right: 5%;
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+
+    @include media(">=desktop") {
+        width: 37.5%;
+        margin-right: 10.41%;
+        padding-top: 38px;
+    }
+}
+
+.achievements-heading {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 38px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 24px;
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+.achievements-description {
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 30px;
+    }
+}
+//ACHIEVEMENT SECTION END
+
+
+//NEWS SECTION START
+.home-news {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include media(">=tablet") {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include media(">=desktop") {
+        padding-top: 81px;
+        padding-bottom: 80px;
+    }
+}
+
+.home-news-link {
+    @include media("<tablet-landscape") {
+        display: none;
+    }
+
+    @include media(">=tablet-landscape") {
+        margin-left: auto;
+    }
+}
+
+.home-news-btnHolder {
+    text-align: center;
+
+    @include media(">=tablet-landscape") {
+        display: none;
+    }
+}
+//NEWS SECTION END
+
+
+//CLIENTS SECTION START
+.clients {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $color-lightgrey;
+    
+    @include media(">=tablet") {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include media(">=tablet-landscape") {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    
+    @include media(">=desktop") {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.clients-title {
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 38px;
+
+    @include media(">=tablet-landscape") {
+        margin-bottom: 50px;
+    }
+
+    @include media(">=desktop") {
+        margin-bottom: 60px;
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+.clients-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px -35px;
+
+    @include media(">=tablet-landscape") {
+        margin-right: -25px;
+        margin-left: -25px;
+    }
+
+    @include media(">=desktop") {
+        margin: 0 -35px -49px;
+    }
+}
+
+.clients-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 30px);
+    max-width: 247px;
+    height: 70px;
+    margin: 0 15px 35px;
+
+    @include media(">=tablet") {
+        width: calc(33.33% - 30px);
+        max-width: none;
+    }
+
+    @include media(">=tablet-landscape") {
+        width: calc(25% - 50px);
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    @include media(">=desktop") {
+        width: calc(25% - 70px);
+        margin: 0 35px 49px;
+    }
+}
+//CLIENTS SECTION END
+
+
+
+

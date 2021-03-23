@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Styleguide"})
+<body>
+<div class="wrapper">
+	@@include("header.html")
+
+	<style>
+		.styleguide-row {
+			margin: 30px 0;
+			padding: 20px 0;
+		}
+
+		.styleguide-heading {
+			font-size: 20px;
+			line-height: 24px;
+			margin-bottom: 15px;
+		}
+
+		h5 {
+			margin-bottom: 20px;
+		}
+
+		hr {
+			margin: 20px 0;
+		}
+
+		.button, .arrow-link {
+			margin: 0 5px;
+		}
+	</style>
+
+	<main class="main">
+		<div class="container">
+			<!--BUTTONS-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>BUTTONS</strong>
+				</h4>
+				<a class="button" href="#">Button</a>
+				<button class="button" type="submit">Submit</button>
+				<input type="submit" value="Input submit">
+
+				<hr>
+
+				<a href="#" class="button with-icon left-icon">
+					<svg class="button-icon" fill="none" viewBox="0 0 15 16" width="15" height="16">
+						<g clip-path="url(#clip0)">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+								  d="M9.40615 3.625C10.0166 3.7441 10.5776 4.04266 11.0174 4.48246C11.4572 4.92226 11.7558 5.48329 11.8749 6.09375M9.40615 1.125C10.6744 1.2659 11.8571 1.83386 12.76 2.73563C13.663 3.6374 14.2324 4.81938 14.3749 6.0875M13.7499 11.075V12.95C13.7506 13.1241 13.7149 13.2964 13.6452 13.4558C13.5755 13.6153 13.4732 13.7585 13.3449 13.8762C13.2167 13.9938 13.0653 14.0834 12.9004 14.1392C12.7355 14.195 12.5608 14.2157 12.3874 14.2C10.4642 13.991 8.61677 13.3338 6.99365 12.2812C5.48354 11.3217 4.20323 10.0414 3.24365 8.53125C2.18738 6.90075 1.53005 5.04437 1.3249 3.1125C1.30928 2.93967 1.32982 2.76548 1.38521 2.60102C1.4406 2.43656 1.52963 2.28543 1.64663 2.15726C1.76362 2.0291 1.90603 1.92669 2.06477 1.85658C2.22351 1.78646 2.39511 1.75016 2.56865 1.75H4.44365C4.74696 1.74701 5.04102 1.85442 5.271 2.05221C5.50098 2.24999 5.6512 2.52465 5.69365 2.825C5.77279 3.42504 5.91955 4.0142 6.13115 4.58125C6.21524 4.80495 6.23344 5.04807 6.18359 5.2818C6.13374 5.51553 6.01794 5.73007 5.8499 5.9L5.05615 6.69375C5.94587 8.25847 7.24143 9.55403 8.80615 10.4438L9.5999 9.65C9.76983 9.48196 9.98437 9.36616 10.2181 9.31631C10.4518 9.26646 10.6949 9.28466 10.9186 9.36875C11.4857 9.58034 12.0749 9.72711 12.6749 9.80625C12.9785 9.84908 13.2558 10.002 13.454 10.2359C13.6522 10.4699 13.7575 10.7685 13.7499 11.075Z"/>
+						</g>
+						<defs>
+							<clipPath id="clip0">
+								<path d="M0 0H15V15H0z" transform="translate(0 .5)"/>
+							</clipPath>
+						</defs>
+					</svg>
+					Позвонить мне
+				</a>
+
+				<hr>
+
+				<a href="#" class="button with-icon left-icon">
+					<svg class="button-icon" fill="none" viewBox="0 0 15 16" width="15" height="16">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M13.75 1.75L6.875 8.625M13.75 1.75L9.375 14.25 6.875 8.625 1.25 6.125 13.75 1.75z"/>
+					</svg>
+					Отправить
+				</a>
+
+				<hr>
+
+				<a href="#" class="button with-icon right-icon">
+					<svg class="button-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+					</svg>
+					Читать посты
+				</a>
+
+				<hr>
+
+				<a href="#" class="read-more-link">
+					Читать больше
+					<svg class="read-more-icon" stroke="currentColor" viewBox="0 0 30 30" width="30" height="30">
+						<circle cx="15" cy="15" r="14" fill="#fff" transform="rotate(-90 15 15)"/>
+						<path stroke-width="2" d="M12.9497 10.7573L17.9497 15.7573M12.9998 19.2928L17.2425 15.0502"/>
+					</svg>
+				</a>
+
+				<hr>
+
+				<a href="#" class="arrow-link right">
+					<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+					</svg>
+					Подробнее
+				</a>
+				<a href="#" class="arrow-link right">
+					<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+					</svg>
+					Следующая статья
+				</a>
+				<a href="#" class="arrow-link right">
+					<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+					</svg>
+					Читать все посты
+				</a>
+
+				<hr>
+
+				<a href="#" class="arrow-link left">
+					<svg class="arrow-link-icon" fill="none" viewBox="0 0 15 15" width="15"
+						 height="15">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+							  d="M14.0049 7.5H1.24508M5.625 3.125L1.25 7.5 5.625 11.875"/>
+					</svg>
+					Предыдущая статья
+				</a>
+				<hr>
+			</div>
+
+			<!--SOCIAL AND MESSENGERS-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>SOCIAL AND MESSENGERS</strong>
+				</h4>
+
+				<h5>Messengers</h5>
+
+				@@include("messengers.html")
+
+				<hr>
+
+				<h5>Socials blue</h5>
+				@@include("social-links.html", {"modifier": "blue"})
+
+				<hr>
+
+				<h5>Socials grey small</h5>
+				@@include("social-links.html", {"modifier": "small grey"})
+			</div>
+
+			<!--CONTACTS LISTING-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>Cotacts listing</strong>
+				</h4>
+
+				@@include("contacts-text-info.html")
+			</div>
+
+			<!--INPUTS-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>FORM, INPUTS</strong>
+				</h4>
+
+				<form action="#">
+					<h6>Valid</h6>
+					<div class="form-group">
+						<input type="text" placeholder="First Name">
+					</div>
+					<h6>Invalid</h6>
+					<div class="form-group">
+						<input type="text" placeholder="First Name" aria-invalid="true">
+						<span class="wpcf7-not-valid-tip">
+							Please, insert your name
+						</span>
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="password">
+					</div>
+					<div class="form-group">
+						<input type="email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<input type="tel" placeholder="tel">
+					</div>
+					<div class="form-group">
+						<input type="number" placeholder="number">
+					</div>
+					<div class="form-group select-group">
+						<select>
+							<option selected disabled hidden>Sort by</option>
+							<option>option 1</option>
+							<option>option 2</option>
+							<option>option 3</option>
+						</select>
+
+						<div class="select-arrow"></div>
+					</div>
+					<div class="form-group checkbox-group">
+						<input id="checkbox-1" type="checkbox">
+						<label for="checkbox-1">Label</label>
+					</div>
+					<label>Checkbox label</label>
+					<input type="radio">
+					<label>Radio label</label>
+				</form>
+			</div>
+
+			<!--PAGINATION-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>PAGINATION</strong>
+				</h4>
+
+				<h5>Обычная пагинация</h5>
+				<div>@@include("pagination.html")</div>
+				<hr>
+				<h5>Пагинация посередине</h5>
+				<div>@@include("pagination.html", {"type": "middle"})</div>
+				<hr>
+				<h5>Пагинация конец</h5>
+				<div>@@include("pagination.html", {"type": "end"})</div>
+			</div>
+
+			<!--CUSTOM ELEMENTS-->
+			<div class="styleguide-row">
+				<h4 class="styleguide-heading">
+					<strong>ELEMENTS</strong>
+				</h4>
+
+				<h1 class="lineHeading big bottom">
+					Мои статьи
+				</h1>
+
+				<hr>
+
+				<h3 class="lineHeading bottom">
+					Мои посты
+				</h3>
+
+				<hr>
+
+				<h2 class="lineHeading left">
+					Мои достижения <br>
+					второй ряд
+				</h2>
+
+				<hr>
+
+				<h2 class="lineHeading top">
+					Мои посты
+				</h2>
+
+				<hr>
+				<h3 class="styleguide-heading">Decorated Listing</h3>
+
+				@@include("decorated-list.html", {"count": 5})
+
+				<hr>
+
+				<h3 class="styleguide-heading">News cards (1 column)</h3>
+
+				@@include("news-cards.html", {"modifier": false, "count": 2})
+
+				<br>
+				<hr>
+
+				<h3 class="styleguide-heading">News cards (2 column)</h3>
+
+				@@include("news-cards.html", {"modifier":"two-columns", "count": 4})
+
+				<hr>
+
+				<h3 class="styleguide-heading">Article author</h3>
+				@@include("article-author.html")
+			</div>
+		</div>
+
+		<hr style="margin-bottom: 50px;">
+
+		<div class="container small">
+			<h4 class="styleguide-heading">
+				<strong>CONTENT</strong>
+			</h4>
+			<div class="content" style="margin-bottom: 40px;">
+				<h1>Heading 1</h1>
+
+				<h2>Heading 2</h2>
+
+				<h3>Heading 3</h3>
+
+				<h4>Heading 4</h4>
+
+				<h5>Heading 5</h5>
+
+				<h6>Heading 6</h6>
+
+				<p>Lorem ipsum dolor, <a href="#">link</a> <strong>strong</strong> <b>b</b> <i>i</i> <em>em</em> consectetur
+					adipisicing elit. Voluptatibus, voluptatum? Quisquam assumenda sit vel a ipsum aliquid quibusdam quia
+					doloremque provident dolores omnis, perspiciatis harum sequi, molestiae fugiat possimus eum odio dicta.
+					Veniam cupiditate tempore accusantium illo error, excepturi id rem. Corporis ipsum dignissimos animi
+					harum consectetur possimus repudiandae aspernatur nobis voluptate dolores, consequatur enim sit
+					molestias? Alias possimus molestias voluptas sint iste! Nisi ipsa explicabo in velit architecto fugiat
+					quis sed deleniti autem laboriosam eos enim doloremque sint odio accusamus odit ea quo, dolor iste
+					eveniet perspiciatis qui ipsum impedit error! Rem similique a officia aliquam et mollitia cumque.
+				</p>
+
+				<ol>
+					<li>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+						enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+					</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac cursus
+						rhoncus pretium.
+					</li>
+					<li>Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer lacinia
+						faucibus.
+					</li>
+				</ol>
+
+				<ul>
+					<li>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+						enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+					</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac cursus
+						rhoncus pretium.
+					</li>
+					<li>Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer lacinia
+						faucibus.
+					</li>
+				</ul>
+				<pre>
+		offset = 0
+		subs_count = get_subs_count(group_id)
+		while offset < subs_count:
+			with engine.connect() as conn:
+				transaction = conn.begin()
+				try:
+					df = get_subs_info(group_id, offset)
+					df.to_sql('subscribers', con=conn, if_exists='append', index=False)
+					transaction.commit()
+				except Exception as E:
+					print(E)
+					transaction.rollback()
+			time.sleep(1)
+			offset += 10
+		</pre>
+
+				<blockquote>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, reprehenderit!
+				</blockquote>
+
+				<img src="../images/content-image.png" alt="content image" width="700" height="370">
+
+				<blockquote>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, optio!</p>
+				</blockquote>
+
+				<blockquote>
+					<q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, optio!</q>
+					<cite>author</cite>
+				</blockquote>
+
+				<table>
+					<thead>
+					<tr>
+						<th>head</th>
+						<th>Lorem ipsum dolor sit amet.</th>
+						<th>head</th>
+						<th>head</th>
+						<th>head</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th>head</th>
+						<td>value</td>
+						<td>value</td>
+						<td>value</td>
+						<td>value</td>
+					</tr>
+					<tr>
+						<th>head</th>
+						<td>value</td>
+						<td>Lorem ipsum dolor sit amet, consectetur adipisicing.</td>
+						<td>value</td>
+						<td>value</td>
+					</tr>
+					<tr>
+						<th>head</th>
+						<td>value</td>
+						<td>value</td>
+						<td>value</td>
+						<td>value</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			@@include("article-author.html")
+
+			@@include("single-page-navigation.html")
+		</div>
+
+		@@include("contacts-section.html")
+	</main>
+
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Single page"})
+<body>
+<div class="wrapper">
+	@@include("header.html", {"modifier": "with-shadow"})
+
+	<main class="main">
+		<section class="single-page">
+			<div class="container small">
+				<article class="single-page-article">
+					<div class="single-page-heading">
+						<h1 class="single-page-title">
+							Транзакции в SQLAlchemy
+						</h1>
+
+						<div class="single-page-meta">
+							<div class="single-page-date">
+								<svg class="single-page-metaIcon" fill="none" viewBox="0 0 15 16" width="15" height="15">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										  d="M11.875 3H3.125C2.43464 3 1.875 3.55964 1.875 4.25V13C1.875 13.6904 2.43464 14.25 3.125 14.25H11.875C12.5654 14.25 13.125 13.6904 13.125 13V4.25C13.125 3.55964 12.5654 3 11.875 3zM10 1.75V4.25M5 1.75V4.25M1.875 6.75H13.125"/>
+								</svg>
+								17 Декабря 2020
+							</div>
+							<div class="single-page-readTime">
+								<svg class="single-page-metaIcon" fill="none" stroke-linecap="round" stroke-linejoin="round"
+									 viewBox="0 0 15 16" width="15" height="15">
+									<path d="M7.5 14.25C10.9518 14.25 13.75 11.4518 13.75 8C13.75 4.54822 10.9518 1.75 7.5 1.75C4.04822 1.75 1.25 4.54822 1.25 8C1.25 11.4518 4.04822 14.25 7.5 14.25Z"/>
+									<path d="M7.5 4.25V8L10 9.25"/>
+								</svg>
+								Читается за 5 мин
+							</div>
+						</div>
+					</div>
+
+					<div class="content">
+						<p>
+							<strong>Транзакция</strong> — последовательность действий, связанных с базой данных. Их основная
+							польза заключается в
+							том, что при возникновении какой-то ошибки или достижении других нужных условий всю транзакцию можно
+							отменить, и все изменения, примененные к базе данных, будут отменены. Сегодня мы напишем небольшой
+							скрипт, который при помощи транзакций SQLAlchemy пишет информацию о подписчиках сообщества в базу
+							данных MySQL, а при возникновении ошибки отменяет текущую транзакцию.
+						</p>
+
+						<h5>
+							Сбор информации об участниках через VK API
+						</h5>
+
+						<p>
+							Для начала напишем пару маленьких функций — первая будет возвращать число подписчиков сообщества, а
+							вторая — отправлять запрос и формировать датафрейм с информацией о подписчиках сообщества.
+						</p>
+
+						<pre>from sqlalchemy import create_engine
+import pandas as pd
+import requests
+import time
+token = '42hj2ehd3djdournf48fjurhf9r9o2eurnf48fjurhf9r9734'
+group_id = 'leftjoin'</pre>
+
+						<p>
+							Чтобы узнать число подписчиков достаточно отправить метод groups.getMembers с любыми параметрами — в
+							ответе всегда возвращается количество в поле count.
+						</p>
+						<pre>def get_subs_count(group_id):
+    count = requests.get('https://api.vk.com/method/groups.getMembers', params={
+        'access_token':token,
+        'v':5.103,
+        'group_id':group_id
+    }).json()['response']['count']
+    return count</pre>
+
+						<p>
+							Для примера будем брать имена, id, фамилии подписчиков, некоторую расширенную информацию и получать
+							только по 10 подписчиков за раз, чтобы рассмотреть работу транзакций детально — каждые 10 подписчиков
+							будут вставляться одной транзакцией. Введём дополнительное поле offset, чтобы знать, в какой итерации
+							добавлены строки.
+						</p>
+
+						<pre>def get_subs_count(group_id):
+    count = requests.get('https://api.vk.com/method/groups.getMembers', params={
+        'access_token':token,
+        'v':5.103,
+        'group_id':group_id
+    }).json()['response']['count']
+    return count</pre>
+
+						<ol>
+							<li>
+								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
+								duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+							</li>
+							<li>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac
+								cursus rhoncus pretium.
+							</li>
+							<li>
+								Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer
+								lacinia faucibus.
+							</li>
+						</ol>
+
+						<img src="../images/content-image.png" alt="content image" width="700" height="370">
+
+						<h5>
+							Транзакции
+						</h5>
+
+						<p>
+							Наконец, можем подсоединиться к базе данных при помощи SQLAlchemy:
+						</p>
+
+						<h1>
+							Пример H1 заголовка
+						</h1>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid est impedit molestias tempora. Deserunt natus neque nisi quam similique.</p>
+
+						<h2>
+							Пример H2 заголовка
+						</h2>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsum necessitatibus nihil. Fugiat, voluptatum.</p>
+
+						<h3>
+							Пример H3 заголовка
+						</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur eligendi laboriosam molestiae quis.</p>
+
+						<h4>
+							Пример H4 заголовка
+						</h4>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis debitis nulla officiis porro tenetur?</p>
+
+						<h5>
+							Пример H5 заголовка
+						</h5>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at consequatur ipsum modi saepe?</p>
+
+						<h6>
+							Пример H6 заголовка и цитата ниже
+						</h6>
+
+						<blockquote>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cumque, delectus ex expedita illum
+							libero, maiores minima nihil non nulla officiis reiciendis repellat? At excepturi nemo non, quas quo
+							sunt.
+						</blockquote>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti eius eum fuga laboriosam
+							officiis, sapiente totam! Accusamus deleniti laborum nam, natus necessitatibus, numquam quas qui quis
+							sit voluptatem, voluptatum.
+						</p>
+
+						<pre>engine = create_engine('mysql+mysqlconnector://' +
+                           'root' + ':' + '' + '@' +
+                           'localhost' + '/' +
+                           'transaction', echo=False)</pre>
+
+						<p>
+							У транзакций всегда должно быть начало — begin, и конец — commit. В случае, если произошла какая-то
+							ошибка, можно сделать откат — rollback. Сперва получаем число подписчиков сообщество, и в каждой
+							итерации цикла при помощи контекстного менеджера with ... as создаём новое подключение. Сразу после
+							объявляем начало транзакции по этому подключению и с обработчиком исключений пробуем получить
+							информацию о десяти подписчиках через функцию get_subs_info. Вставляем полученный датафрейм в таблицу
+							методом to_sql и завершаем транзакцию при помощи метода commit(). В случае, если возникла какая-то
+							ошибка — печатаем её на экран и отменяем транзакцию.
+						</p>
+
+						<pre>offset = 0
+subs_count = get_subs_count(group_id)
+while offset < subs_count:
+    with engine.connect() as conn:
+        transaction = conn.begin()
+        try:
+            df = get_subs_info(group_id, offset)
+            df.to_sql('subscribers', con=conn, if_exists='append', index=False)
+            transaction.commit()
+        except Exception as E:
+            print(E)
+            transaction.rollback()
+    time.sleep(1)
+    offset += 10</pre>
+
+						<p>
+							Чтобы протестировать работу транзакций слегка обновим последний блок кода — добавим вызов ошибки
+							ValueError после вставки данных в базу, если текущий offset равен 10.
+						</p>
+
+						<pre>offset = 0
+subs_count = get_subs_count(group_id)
+while offset < subs_count:
+    with engine.connect() as conn:
+        transaction = conn.begin()
+        try:
+            df = get_subs_info(group_id, offset)
+            df.to_sql('subscribers', con=conn, if_exists='append', index=False)
+            transaction.commit()
+        except Exception as E:
+            print(E)
+            transaction.rollback()
+    time.sleep(1)
+    offset += 10</pre>
+
+						<p>
+							Как и планировалось, данные за итерацию с offset = 10 не занесены в таблицу. Несмотря на то, что
+							ошибка возникла уже после добавления новых данных, транзакция была прервана методом rollback() и
+							завершение транзакции было отменено.
+						</p>
+
+						<ul>
+							<li>
+								Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+							</li>
+							<li>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, mauris quam pharetra risus hac cursus rhoncus pretium.
+							</li>
+							<li>
+								Nisi egestas non non egestas vitae vulputate aliquam. Suspendisse amet ornare massa dui integer lacinia faucibus.
+							</li>
+						</ul>
+					</div>
+
+					@@include("article-author.html")
+				</article>
+
+				@@include("single-page-navigation.html")
+			</div>
+		</section>
+	</main>
+	@@include("contacts-section.html")
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

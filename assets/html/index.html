@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Главная"})
+<body>
+<div class="wrapper">
+	@@include("header.html")
+
+	<main class="main">
+		<section class="hero-section">
+			<picture class="hero-section-bg">
+				<source srcset="../images/homepage-mobile-bg.png" media="(max-width: 1023px)">
+				<source srcset="../images/homepage-desktop-bg.png" media="(min-width: 1024px)">
+				<img loading="lazy" src="../images/homepage-desktop-bg.png" alt="background-grid" width="1558" height="653">
+			</picture>
+			<div class="container">
+				<div class="hero-section-holder">
+					<div class="hero-section-text">
+						<h1 class="hero-section-heading lineHeading big bottom">
+							Мои статьи
+						</h1>
+
+						<p class="hero-section-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet augue nibh est, risus sodales
+							fringilla mauris mauris. Purus volutpat risus, varius senectus sit bibendum elementum semper. Ac sit
+							sit aliquet bibendum a. Aliquet urna, vulputate sagittis, in aliquam volutpat. Tincidunt amet, in arcu
+							est facilisis.
+						</p>
+
+						<a href="#" class="read-more-link">
+							Читать больше
+							<svg class="read-more-icon" stroke="currentColor" viewBox="0 0 30 30" width="30" height="30">
+								<circle cx="15" cy="15" r="14" fill="#fff" transform="rotate(-90 15 15)"/>
+								<path stroke-width="2" d="M12.9497 10.7573L17.9497 15.7573M12.9998 19.2928L17.2425 15.0502"/>
+							</svg>
+						</a>
+					</div>
+
+					@@include("news-cards.html", {"count": 2})
+				</div>
+			</div>
+		</section>
+		<!--hero-section end-->
+
+		<section class="achievements">
+			<div class="container">
+				<div class="achievements-holder">
+					<div class="achievements-text">
+						<h2 class="achievements-heading lineHeading left">
+							Мои <br> достижения
+						</h2>
+
+						<p class="achievements-description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet augue nibh est, risus sodales
+							fringilla mauris mauris. Purus volutpat risus, varius senectus sit bibendum elementum semper. Ac sit
+							sit aliquet bibendum a. Aliquet urna, vulputate sagittis, in aliquam volutpat. Tincidunt amet, in arcu
+							est facilisis.
+						</p>
+
+						<a href="news.html" class="button with-icon right-icon">
+							<svg class="button-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+									  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+							</svg>
+							Читать посты
+						</a>
+					</div>
+					
+					@@include("decorated-list.html", {"count": 5})
+				</div>
+			</div>
+		</section>
+		<!--achievements end-->
+
+		<section class="home-news">
+			<div class="container">
+				@@include("news-listing.html", {
+					"page": "home",
+					"headingModifier": "bottom",
+					"count": 4
+				})
+
+				<div class="home-news-btnHolder">
+					<a href="#" class=" button with-icon right-icon">
+						<svg class="button-icon" fill="none" viewBox="0 0 15 15" width="15" height="15">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+								  d="M.995117 7.5H13.7549M9.375 3.125L13.75 7.5 9.375 11.875"/>
+						</svg>
+						Читать все посты
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--home-news end-->
+		
+		<section class="clients">
+			<div class="container">
+				<h3 class="clients-title lineHeading bottom">Мои клиенты</h3>
+
+				<ul class="clients-listing">
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/amazon-logo.png"
+							 alt="Amazon logo"
+							 width="220"
+							 height="67"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/spotify-logo.png"
+							 alt="Spotify logo"
+							 width="262"
+							 height="79"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/google-logo.png"
+							 alt="Google logo"
+							 width="228"
+							 height="76"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/slack-logo.png"
+							 alt="Slack logo"
+							 width="262"
+							 height="67"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/google-logo.png"
+							 alt="Google logo"
+							 width="228"
+							 height="76"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/slack-logo.png"
+							 alt="Slack logo"
+							 width="262"
+							 height="67"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/amazon-logo.png"
+							 alt="Amazon logo"
+							 width="220"
+							 height="67"
+						>
+					</li>
+					<li class="clients-item">
+						<img class="clients-logo"
+							 loading="lazy"
+							 src="../images/spotify-logo.png"
+							 alt="Spotify logo"
+							 width="262"
+							 height="79"
+						>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!--clients end-->
+
+	</main>
+	@@include("contacts-section.html")
+	@@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

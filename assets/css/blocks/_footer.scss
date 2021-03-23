@@ -1,0 +1,35 @@
+.footer {
+    background-color: $color-pureWhite;
+    box-shadow: 0px -4px 20px $color-grey400;
+
+    .site-logo {
+
+    }
+}
+
+.footer-holder {
+    display: flex;
+    align-items: center;
+    padding: 17px 0 18px;
+
+    @include media(">=tablet-landscape") {
+        padding: 20px 0;
+    }
+
+    @include media(">=desktop") {
+        padding: 27px 0 28px;
+    }
+}
+
+.footer-right {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    margin-left: auto;
+}
+
+.footer-copyright {
+    color: $color-grey200;
+    font-size: 12px;
+    line-height: 30px;
+}

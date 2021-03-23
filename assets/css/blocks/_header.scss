@@ -1,0 +1,242 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 19px 0;
+    background-color: $color-pureWhite;
+
+    @include media(">=desktop") {
+        padding: 21px 0 20px;
+    }
+
+    &.with-shadow {
+        box-shadow: 0 4px 20px $color-grey400;
+    }
+}
+
+.header-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-button {
+    @include media("<tablet-landscape") {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        color: $color-blue;
+    }
+
+    @include media(">=tablet-landscape") {
+        display: none;
+    }
+
+    span {
+        @include media("<tablet-landscape") {
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: currentColor;
+            transition: background-color .3s, color .3s;
+        }
+
+        &::before,
+        &::after {
+            @include media("<tablet-landscape") {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: currentColor;
+                transition: transform .3s
+            }
+        }
+
+        &::before {
+            @include media("<tablet-landscape") {
+                margin-top: -6px;
+            }
+        }
+
+        &::after {
+            @include media("<tablet-landscape") {
+                margin-top: 6px;
+            }
+        }
+    }
+
+    .no-touch & {
+        &:hover {
+            color: $color-lightblue;
+        }
+    }
+
+    .menu-opened & {
+        span {
+            @include media("<tablet-landscape") {
+                background-color: transparent;
+            }
+
+            &::before {
+                @include media("<tablet-landscape") {
+                    transform: translateY(6px) rotate(45deg);
+                }
+            }
+
+            &::after {
+                @include media("<tablet-landscape") {
+                    transform: translateY(-6px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.header-navigation-wrapper {
+    @include media("<tablet-landscape") {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - 70px);
+        padding-bottom: 50px;
+        overflow: auto;
+        background-color: $color-pureWhite;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s;
+    }
+
+    @include media(">=tablet-landscape") {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .menu-opened & {
+        @include media("<tablet-landscape") {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+}
+
+.header-controls {
+    @include media(">=tablet-landscape") {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-language {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    margin: 0 auto 30px;
+    padding: 5px;
+    color: $color-black;
+    font-weight: $fontW600;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include media(">=tablet-landscape") {
+        margin: 0;
+        margin-right: 25px;
+    }
+
+    .no-touch & {
+        &:hover {
+            &::after {
+                border-left-color: $color-lightblue;
+                border-bottom-color: $color-lightblue;
+            }
+        }
+    }
+
+    span, a {
+        display: block;
+    }
+
+    a {
+        color: $color-blue;
+
+        .no-touch & {
+            &:hover {
+                color: $color-lightblue;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &::after {
+        position: absolute;
+        top: 8px;
+        right: 6px;
+        width: 7px;
+        height: 7px;
+        border: 2px solid transparent;
+        border-left-color: currentColor;
+        border-bottom-color: currentColor;
+        border-radius: 2px;
+        transform: rotate(-45deg);
+        transition: border-color .3s;
+        content: "";
+    }
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    padding: 2px;
+    padding-top: 26px;
+    background-color: $color-pureWhite;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba($color-black, .2);
+    opacity: 0;
+    pointer-events: none;
+
+    .touch .is-opened & {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .no-touch .header-language:hover & {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    span,
+    a {
+        display: block;
+        margin-bottom: 3px;
+        padding: 3px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    span {
+        background-color: rgba($color-black, .1);
+        border-radius: 3px;
+        cursor: default;
+    }
+}
+

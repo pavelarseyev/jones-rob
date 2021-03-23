@@ -1,0 +1,18 @@
+@import "libs/normalize";
+@import "libs/mixins";
+@import "libs/fonts";
+@import "libs/include-media";
+@import "libs/wp-styles";
+@import "libs/styleguide";
+@import "libs/wp-styles";
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/contacts-section";
+@import "blocks/news-section";
+
+@import "pages/common";
+@import "pages/homepage";
+@import "pages/news";
+@import "pages/contacts";
+@import "pages/single-page";
