@@ -38,15 +38,7 @@
     }
 
     .form-group {
-        @include media(">=tablet-landscape") {
-            margin-right: 15px;
-            padding-bottom: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
-            padding-bottom: 0;
-        }
+        padding-bottom: 0;
     }
 
     input,
@@ -55,13 +47,17 @@
     }
 }
 
-.news-controls-search {
+.news-controls-search-form {
+    margin-bottom: 15px;
+
     @include media(">=tablet") {
         width: 66.66%;
+        margin-right: 15px;
+        margin-bottom: 0;
     }
 }
 
-.news-controls-sort {
+.news-controls-sort-form {
     @include media(">=tablet") {
         width: 30.03%;
     }
